@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       model_name:
-        description: 'parham/face-variant-generator'
+        description: "like parham-dev/face-variant-generato"
         required: true
  
 jobs:
