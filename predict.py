@@ -126,6 +126,10 @@ class Predictor(BasePredictor):
             parts_after_pbxt = url.split("/pbxt/")[1]
         return parts_after_pbxt.split("/trained_model.tar")[0]
 
+    def add_to_lora_map(self, lora_url: str):
+        uuid = self.parse_custom_lora_url(lora_url)
+        self.comfyUI.weights_downloader.download_lora_from_replicate_url(uuid, lora_url)
+
     def cleanup(self):
         """Clean up temporary directories."""
         self.comfyUI.clear_queue()
